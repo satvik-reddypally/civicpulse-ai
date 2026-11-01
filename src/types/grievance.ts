@@ -7,7 +7,9 @@ export interface WeatherTelemetry {
   is_raining?: boolean;
   weather_code?: number | string;
   fetched_at?: string;
+  source?: string;
 }
+
 
 export interface AirQualityTelemetry {
   pm25: number | string;
@@ -40,6 +42,7 @@ export type LiveWeatherData = WeatherTelemetry;
 export type GovApiData = AirQualityTelemetry;
 
 export interface NearbyPlace {
+  id?: number;
   name: string;
   type: string;
   lat: number;
