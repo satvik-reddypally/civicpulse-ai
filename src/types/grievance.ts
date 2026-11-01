@@ -1,8 +1,10 @@
 export interface WeatherTelemetry {
   temperature_c: number | string;
   precipitation_mm: number;
+  rain_mm?: number;
   wind_speed_kmh?: number;
   weather_condition: string;
+  is_raining?: boolean;
 }
 
 export interface AirQualityTelemetry {
@@ -10,6 +12,9 @@ export interface AirQualityTelemetry {
   pm10?: number | string;
   aqi_status: string;
   station_name?: string;
+  total_records_fetched?: number;
+  records?: unknown[];
+  source?: string;
 }
 
 export interface LiveEnrichmentContext {
@@ -27,7 +32,6 @@ export interface AgentTraceStep {
   timestamp: string;
 }
 
-// Backend compatibility helper types
 export type AgentLogStep = AgentTraceStep;
 export type LiveWeatherData = WeatherTelemetry;
 export type GovApiData = AirQualityTelemetry;
@@ -44,12 +48,20 @@ export interface AIAnalysisResult {
   title: string;
   category: string;
   responsible_department: string;
+  department?: string;
   priority_level: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
   urgency_score: number;
+  ai_severity_score?: number;
   statutory_sla_hours: number;
+  sla_hours?: number;
   ai_summary: string;
+  english_summary?: string;
+  regional_summary?: string;
   regional_citizen_explainer: string;
   formal_legal_notice: string;
+  legal_notice_draft?: string;
+  is_valid_civic_issue?: boolean;
+  rejection_reason?: string;
 }
 
 export interface GrievanceRecord {
