@@ -27,6 +27,31 @@ export interface AgentTraceStep {
   timestamp: string;
 }
 
+// Backend compatibility helper types
+export type AgentLogStep = AgentTraceStep;
+export type LiveWeatherData = WeatherTelemetry;
+export type GovApiData = AirQualityTelemetry;
+
+export interface NearbyPlace {
+  name: string;
+  type: string;
+  lat: number;
+  lon: number;
+  distance_meters: number;
+}
+
+export interface AIAnalysisResult {
+  title: string;
+  category: string;
+  responsible_department: string;
+  priority_level: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  urgency_score: number;
+  statutory_sla_hours: number;
+  ai_summary: string;
+  regional_citizen_explainer: string;
+  formal_legal_notice: string;
+}
+
 export interface GrievanceRecord {
   id: string;
   created_at: string;
