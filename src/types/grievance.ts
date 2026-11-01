@@ -6,6 +6,7 @@ export interface WeatherTelemetry {
   weather_condition: string;
   is_raining?: boolean;
   weather_code?: number | string;
+  fetched_at?: string;
 }
 
 export interface AirQualityTelemetry {
@@ -52,10 +53,10 @@ export interface AIAnalysisResult {
   responsible_department: string;
   department?: string;
   priority_level: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
-  urgency_score: number;
-  ai_severity_score?: number;
-  statutory_sla_hours: number;
-  sla_hours?: number;
+  urgency_score: number | string;
+  ai_severity_score?: number | string;
+  statutory_sla_hours: number | string;
+  sla_hours?: number | string;
   ai_summary: string;
   english_summary?: string;
   regional_summary?: string;
