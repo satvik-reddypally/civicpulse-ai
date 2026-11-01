@@ -1,8 +1,8 @@
 export interface WeatherTelemetry {
   temperature_c: number | string;
-  precipitation_mm: number;
-  rain_mm?: number;
-  wind_speed_kmh?: number;
+  precipitation_mm: number | string;
+  rain_mm?: number | string;
+  wind_speed_kmh?: number | string;
   weather_condition: string;
   is_raining?: boolean;
   weather_code?: number | string;
@@ -13,7 +13,7 @@ export interface AirQualityTelemetry {
   pm10?: number | string;
   aqi_status: string;
   station_name?: string;
-  total_records_fetched?: number;
+  total_records_fetched?: number | string;
   records?: unknown[];
   source?: string;
   fetched_at?: string;
