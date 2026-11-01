@@ -52,10 +52,10 @@ export interface AIAnalysisResult {
   responsible_department: string;
   department?: string;
   priority_level: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
-  urgency_score: number | string;
-  ai_severity_score?: number | string;
-  statutory_sla_hours: number | string;
-  sla_hours?: number | string;
+  urgency_score: number;
+  ai_severity_score?: number;
+  statutory_sla_hours: number;
+  sla_hours?: number;
   ai_summary: string;
   english_summary?: string;
   regional_summary?: string;
